@@ -1,7 +1,12 @@
-- name: Trufflehog Actions Scan
-  # You may pin to the exact commit or the version.
-  # uses: edplato/trufflehog-actions-scan@cc195ec587fe7f3ed006dfeb2d34b818a6f3b95b
-  uses: edplato/trufflehog-actions-scan@v0.9k-beta
-  with:
-    # Argument options for scan.
-    scanArguments: # optional
+name: Trufflehog Actions Scan
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: trufflehog-actions-scan
+      uses: edplato/trufflehog-actions-scan@master
+      with:
+        scanArguments: "--regex --entropy=False --max_depth=5 --rules /regexes.json"
