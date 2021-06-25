@@ -1,0 +1,22 @@
+- name: TruffleHog Enterprise
+  # You may pin to the exact commit or the version.
+  # uses: trufflesecurity/TruffleHog-Enterprise-Github-Action@a99b0a3e0cc7cf8f8b2b1774462443b29bb2445c
+  uses: trufflesecurity/TruffleHog-Enterprise-Github-Action@v1.0.0
+  with:
+    # Flags:
+      --help                  Show context-sensitive help (also try --help-long and --help-man).
+  -v, --debug                 Enable debug mode.
+      --trace                 Enable tracing of code line numbers.
+      --json                  Enable JSON output.
+      --send-error-telemetry  Turns error telemetry off.
+      --fail-verified         Only emit failure code for verified findings.
+      --quiet                 Only show results.
+      --config=CONFIG         Path to configuration file. You can also specify Google Secrets Manager secrets with
+                              'gsm://<project_id>/<secret_name>'.
+
+Args:
+  <base>       Start scanning from here (usually main branch).
+  <head>       Scan commits until here (usually dev branch).
+  [<workdir>]  Optional path to the repo to scan.
+
+    args: # optional
